@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #F26522; /* CICS Logo Orange */
+  --primary-light: #F7803F;
+  --primary-dark: #D64E12;
+  --secondary: #0077B5; /* LinkedIn Blue */
+  --secondary-light: #1A8AC8;
+  --secondary-dark: #00669C;
+  --navy: #152238; /* Dark navy from CICS logo */
+  --navy-light: #1E2F4A;
+  --navy-dark: #0C1423;
+  --background-light: #F8FAFC; /* Very light blue-gray for backgrounds */
+  --highlight: #FFE0D0; /* Light orange for highlights */
+  --text-dark: #1E293B; /* Slate 800 for text */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-white text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-slate-800 tracking-tight;
+  }
+  
+  /* Responsive font sizes */
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  /* Better tap targets on mobile */
+  button, 
+  [role="button"],
+  a {
+    @apply outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+  }
+}
+
+/* Custom CSS for specific color themes */
+/* Text colors */
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-primary-light {
+  color: var(--primary-light);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-secondary-light {
+  color: var(--secondary-light);
+}
+
+.text-secondary-dark {
+  color: var(--secondary-dark);
+}
+
+.text-navy {
+  color: var(--navy);
+}
+
+.text-navy-light {
+  color: var(--navy-light);
+}
+
+.text-navy-dark {
+  color: var(--navy-dark);
+}
+
+/* Background colors */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-secondary-light {
+  background-color: var(--secondary-light);
+}
+
+.bg-secondary-dark {
+  background-color: var(--secondary-dark);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.bg-navy-light {
+  background-color: var(--navy-light);
+}
+
+.bg-navy-dark {
+  background-color: var(--navy-dark);
+}
+
+/* Border colors */
+.border-primary {
+  border-color: var(--primary);
+}
+
+.border-primary-light {
+  border-color: var(--primary-light);
+}
+
+.border-primary-dark {
+  border-color: var(--primary-dark);
+}
+
+.border-secondary {
+  border-color: var(--secondary);
+}
+
+.border-secondary-light {
+  border-color: var(--secondary-light);
+}
+
+.border-secondary-dark {
+  border-color: var(--secondary-dark);
+}
+
+.border-navy {
+  border-color: var(--navy);
+}
+
+.border-navy-light {
+  border-color: var(--navy-light);
+}
+
+.border-navy-dark {
+  border-color: var(--navy-dark);
+}
+
+/* These CSS classes are already defined above */
+
+/* Professional styling enhancements */
+.section-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden border border-gray-100;
+}
+
+.section-header {
+  background: linear-gradient(to right, var(--primary), var(--navy));
+  @apply text-white p-6;
+}
+
+.bg-light {
+  background-color: var(--background-light);
+}
+
+.highlight-box {
+  @apply bg-gradient-to-r from-white to-orange-50 border-l-4 border-primary p-4 rounded-r-lg;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header-shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.btn-primary {
+  @apply bg-primary text-white font-semibold py-2 px-4 rounded-md transition-colors;
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white font-semibold py-2 px-4 rounded-md transition-colors;
+}
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+}
+
+.btn-navy {
+  @apply bg-navy text-white font-semibold py-2 px-4 rounded-md transition-colors;
+}
+.btn-navy:hover {
+  background-color: var(--navy-dark);
+}
+
+/* Gradient backgrounds like CICS logo */
+.bg-gradient-cics {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.bg-gradient-navy {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+
+.bg-gradient-cics-to-navy {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 100%);
+}
+
+/* Additional responsive improvements */
+@layer utilities {
+  /* Better responsive spacing */
+  .section-spacing {
+    @apply my-6 md:my-8 lg:my-12;
+  }
+  
+  .content-spacing {
+    @apply my-4 md:my-6;
+  }
+  
+  /* Responsive typography */
+  .responsive-text {
+    @apply text-base md:text-lg;
+  }
+  
+  .responsive-small {
+    @apply text-sm md:text-base;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .mobile-stack {
+      @apply flex flex-col gap-4;
+    }
+    
+    .mobile-full {
+      @apply w-full !important;
+    }
+    
+    .mobile-center {
+      @apply flex justify-center text-center;
+    }
+    
+    .mobile-hidden {
+      @apply hidden;
+    }
+  }
+  
+  /* Smooth transitions */
+  .hover-lift {
+    @apply transition-transform duration-200;
+  }
+  
+  .hover-lift:hover {
+    @apply transform -translate-y-1;
+  }
+  
+  /* Professional touch - animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  .animate-glow {
+    animation: glow 3s infinite;
+  }
+  
+  .animate-width {
+    animation: width 1s ease-out forwards;
+  }
+  
+  .animate-gradient-shift {
+    animation: gradientShift 8s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  .animate-spin-slow {
+    animation: spinSlow 20s linear infinite;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  
+  @keyframes width {
+    from { width: 0; }
+    to { width: 4rem; }
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes spinSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-count {
+    animation: countUp 1.5s ease-out forwards;
+    counter-reset: count 0;
+  }
+  
+  @keyframes countUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
